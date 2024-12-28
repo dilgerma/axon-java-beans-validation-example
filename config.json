@@ -1,0 +1,481 @@
+{
+  "slices": [
+    {
+      "id": "3458764611846953305",
+      "title": "slice: Account ",
+      "context": "",
+      "commands": [
+        {
+          "id": "3458764611846953302",
+          "domain": "",
+          "modelContext": "Account Management",
+          "context": "INTERNAL",
+          "slice": "slice: Account ",
+          "title": "Register Account",
+          "fields": [
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "personId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "COMMAND",
+          "description": "",
+          "aggregate": "Accounts",
+          "aggregateDependencies": [
+            "Accounts"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764611846953103",
+              "type": "OUTBOUND",
+              "title": "Account registered",
+              "elementType": "EVENT"
+            },
+            {
+              "id": "3458764611846953313",
+              "type": "INBOUND",
+              "title": "screen",
+              "elementType": "SCREEN"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "events": [
+        {
+          "id": "3458764611846953103",
+          "domain": "",
+          "modelContext": "Account Management",
+          "context": "INTERNAL",
+          "slice": "slice: Account ",
+          "title": "Account registered",
+          "fields": [
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "personId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": true,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "EVENT",
+          "description": "",
+          "aggregate": "Accounts",
+          "aggregateDependencies": [
+            "Accounts"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764611849271684",
+              "type": "OUTBOUND",
+              "title": "registered emails",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764611849271889",
+              "type": "OUTBOUND",
+              "title": "registered persons",
+              "elementType": "READMODEL"
+            },
+            {
+              "id": "3458764611846953302",
+              "type": "INBOUND",
+              "title": "Register Account",
+              "elementType": "COMMAND"
+            }
+          ],
+          "listElement": false,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "readmodels": [],
+      "screens": [
+        {
+          "id": "3458764611846953313",
+          "domain": "",
+          "modelContext": "Account Management",
+          "slice": "slice: Account ",
+          "title": "screen",
+          "fields": [
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "personId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            },
+            {
+              "name": "name",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": false,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "SCREEN",
+          "description": "",
+          "aggregate": "Accounts",
+          "aggregateDependencies": [
+            "Accounts"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764611846953302",
+              "type": "OUTBOUND",
+              "title": "Register Account",
+              "elementType": "COMMAND"
+            }
+          ],
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "processors": [],
+      "tables": [],
+      "specifications": [
+        {
+          "id": "3458764611850281130",
+          "sliceName": "slice: Account ",
+          "title": "spec:  Account ",
+          "given": [
+            {
+              "title": "Account registered",
+              "id": "3458764611850281138",
+              "index": 0,
+              "type": "SPEC_EVENT",
+              "fields": [
+                {
+                  "name": "email",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "excludeFromApi": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                },
+                {
+                  "name": "name",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "excludeFromApi": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                },
+                {
+                  "name": "personId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "excludeFromApi": false,
+                  "generated": false,
+                  "idAttribute": true,
+                  "type": "String",
+                  "cardinality": "Single"
+                }
+              ],
+              "linkedId": "3458764611846953103"
+            }
+          ],
+          "when": [
+            {
+              "title": "Register Account",
+              "id": "3458764611850281132",
+              "index": 0,
+              "type": "SPEC_COMMAND",
+              "fields": [
+                {
+                  "name": "email",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "excludeFromApi": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                },
+                {
+                  "name": "personId",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "excludeFromApi": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                },
+                {
+                  "name": "name",
+                  "example": "",
+                  "mapping": "",
+                  "optional": false,
+                  "excludeFromApi": false,
+                  "generated": false,
+                  "idAttribute": false,
+                  "type": "String",
+                  "cardinality": "Single"
+                }
+              ],
+              "linkedId": "3458764611846953302"
+            }
+          ],
+          "then": [
+            {
+              "title": "Error-Case",
+              "id": "3458764611850281134",
+              "index": 0,
+              "type": "SPEC_ERROR"
+            }
+          ],
+          "comments": []
+        }
+      ],
+      "actors": [],
+      "aggregates": [
+        "Accounts"
+      ]
+    },
+    {
+      "id": "3458764611849395876",
+      "title": "slice: registered emails",
+      "context": "",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764611849271684",
+          "domain": "",
+          "modelContext": "Account Management",
+          "context": "INTERNAL",
+          "slice": "slice: registered emails",
+          "title": "registered emails",
+          "fields": [
+            {
+              "name": "email",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": true,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "Accounts",
+          "aggregateDependencies": [
+            "Accounts"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764611846953103",
+              "type": "INBOUND",
+              "title": "Account registered",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": true,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [],
+      "processors": [],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Accounts"
+      ]
+    },
+    {
+      "id": "3458764611849395890",
+      "title": "slice: registered persons",
+      "context": "",
+      "commands": [],
+      "events": [],
+      "readmodels": [
+        {
+          "id": "3458764611849271889",
+          "domain": "",
+          "modelContext": "Account Management",
+          "context": "INTERNAL",
+          "slice": "slice: registered persons",
+          "title": "registered persons",
+          "fields": [
+            {
+              "name": "personId",
+              "example": "",
+              "mapping": "",
+              "optional": false,
+              "excludeFromApi": false,
+              "generated": false,
+              "idAttribute": true,
+              "type": "String",
+              "cardinality": "Single"
+            }
+          ],
+          "type": "READMODEL",
+          "description": "",
+          "aggregate": "Accounts",
+          "aggregateDependencies": [
+            "Accounts"
+          ],
+          "dependencies": [
+            {
+              "id": "3458764611846953103",
+              "type": "INBOUND",
+              "title": "Account registered",
+              "elementType": "EVENT"
+            }
+          ],
+          "listElement": true,
+          "apiEndpoint": "",
+          "service": null,
+          "createsAggregate": false,
+          "prototype": {
+            "activeByDefault": false
+          }
+        }
+      ],
+      "screens": [],
+      "processors": [],
+      "tables": [],
+      "specifications": [],
+      "actors": [],
+      "aggregates": [
+        "Accounts"
+      ]
+    }
+  ],
+  "flows": [],
+  "aggregates": [
+    {
+      "id": "3458764611847060437",
+      "title": "Accounts",
+      "fields": [
+        {
+          "name": "aggregateId",
+          "type": "UUID",
+          "example": "",
+          "mapping": "",
+          "optional": false,
+          "generated": false,
+          "cardinality": "Single",
+          "idAttribute": true,
+          "excludeFromApi": false
+        }
+      ],
+      "service": null,
+      "type": "AGGREGATE"
+    }
+  ],
+  "actors": [],
+  "context": "Account Management",
+  "codeGen": {
+    "application": "Accounts",
+    "domain": "",
+    "rootPackage": "de.nebulit",
+    "contextPackage": "accounts"
+  },
+  "boardId": "uXjVLzp_Xps="
+}
